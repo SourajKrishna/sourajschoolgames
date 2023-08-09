@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+  }
+  .container {
+    text-align: center;
+  }
+  .heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  .animation-target {
+    width: 100px;
+    height: 100px;
+    background-color: #ff6347;
+    margin-top: 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+  .btn-clicked .animation-target {
+    transform: scale(1.2);
+  }
+</style>
+<title>Animated Button</title>
+</head>
+<body>
+<div class="container">
+  <h1 class="heading">Latest Game By Souraj</h1>
+  <a href="game.html">
+  <button class="btn" id="animateBtn">Play</button>
+</a>
+<a href="Source Code Of Bouce Ball By Souraj.pdf" download>
+<button class="btn" id="animateBtn">Source File</button>
+</a>
+  <div class="animation-target"></div>
+</div>
+<script>
+  const animateBtn = document.getElementById("animateBtn");
+  const animationTarget = document.querySelector(".animation-target");
+
+  animateBtn.addEventListener("click", () => {
+    animationTarget.classList.add("btn-clicked");
+    setTimeout(() => {
+      animationTarget.classList.remove("btn-clicked");
+    }, 300);
+  });
+</script>
+</body>
+</html>
